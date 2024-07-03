@@ -1,7 +1,14 @@
 const carCollection = ["toyota", "fiat", "honda", "bmw"];
 
 function updateCarCollection(carBrand) {
-  // Start coding here
+  let lowerCarBarand = carBrand.toLowerCase();
+  let existingIndex = carCollection.findIndex(car => car.toLowerCase() === lowerCarBarand);
+  if(existingIndex !== -1) {
+    return(`${carBrand} already exists in position ${existingIndex +1} of the car collection.`);
+  } else {
+    carCollection.push(carBrand);
+    return(`New car collection is: ${carCollection.join(",")}`);
+  }
 }
 
 //ผลลัพธ์ที่ควรได้จาก Example case
